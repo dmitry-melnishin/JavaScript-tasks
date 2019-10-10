@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form id="form" action="#" method="post">
+      <div>
+        <input type="file" name="anyfile" id="inpField" data-text="setFile" />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="title"
+          id="inpTitle"
+          data-text="setTitle"
+          placeholder="title"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="desc"
+          id="inpDesc"
+          data-text="setDesc"
+          placeholder="description"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="price"
+          id="inpPrice"
+          data-text="setPrice"
+          placeholder="price"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="color"
+          id="inpColor"
+          data-text="setColor"
+          placeholder="color"
+        />
+      </div>
+
+      <button type="button" id="addButton">
+        Add item
+      </button>
+      <button id="reset" type="reset" name="reset">Reset</button>
+    </form>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
