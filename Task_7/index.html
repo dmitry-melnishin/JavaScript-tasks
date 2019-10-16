@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Flowers</h1>
+      <a class="cart" href="cart_page.html">
+        Cart [
+        <span class="cart__counter">0</span>
+        ]
+      </a>
+    </header>
+    <main class="main">
+      <div class="price-filter">
+        <input type="text" placeholder="from 0" />
+        <input type="text" placeholder="to 50" />
+        <button id="filterPriceButton" class="btn">
+          Apply filter by price
+        </button>
+      </div>
+      <button id="availabilityFilterBtn" class="btn">
+        Apply filter by availability
+      </button>
+    </main>
+    <footer class="footer">
+      <div class="social">
+        <a class="social__btn social__btn_tv" href="#">twiter</a>
+        <a class="social__btn social__btn_fb" href="#">facebook</a>
+        <a class="social__btn social__btn_inst" href="#">instagram</a>
+      </div>
+      <div class="contacts">
+        Contacts data:
+        <a class="contacts__phone" href="tel:380632727960">
+          +38 (063) 272 79 60
+        </a>
+        <a class="contacts__mail" href="#">plants@gmail.com</a>
+      </div>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>
