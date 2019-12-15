@@ -137,3 +137,39 @@ ${createHtmlGridItems(items)}</div>
 <div class="container-list container-list_invis">
 ${createHtmlListItems(items)}</div>`;
 document.body.insertAdjacentHTML("afterbegin", fullHtml);
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   let allElements = document.getElementsByTagName("*");
+//   for (var i = 0; i < allElements.length; i++) {
+//     allElements[i].addEventListener(
+//       "click",
+//       function() {
+//         console.log(this.tagName);
+//       },
+//       true
+//     );
+//   }
+//   document.addEventListener(
+//     "click",
+//     function() {
+//       console.log(this);
+//     },
+//     true
+//   );
+//   window.addEventListener(
+//     "click",
+//     function() {
+//       console.log(this);
+//     },
+//     true
+//   );
+// });
+
+// const btnGrid = document.querySelector(".btn_grid");
+// btnGrid.addEventListener("click", e => {
+//   e.stopPropagation();
+// });
+
+// document.addEventListener("click", e => {
+//   btnGrid.parentNode.removeChild(btnGrid);
+// });
