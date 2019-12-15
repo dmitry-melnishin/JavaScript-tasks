@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        overflow: hidden;
+        height: inherit;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById("myCanvas"),
+        ctx = canvas.getContext("2d"),
+        width = (canvas.width = window.innerWidth),
+        height = (canvas.height = window.innerHeight),
+        numberOfballs = 20;
+
+      const random = (min, max) =>
+        Math.floor(Math.random() * (max - min)) + min;
+
+      class Ball {
+        constructor() {
+          this.radius = random(10, 25);
+          this.x = this.radius;
+          this.y = this.radius;
+          this.velX = random(2, 7);
+          this.velY = 7 - this.velX;
+          this.color =
+            "rgb(" +
+            random(0, 255) +
+            "," +
+            random(0, 255) +
+            "," +
+            random(0, 255) +
+            ")";
+        }
+
+        drawBall() {
+          ctx.beginPath();
+          ctx.fillStyle = this.color;
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          ctx.fill();
+        }
+
+        changeDirectionIfNecessary() {
+          if (this.x < this.radius || this.x > width - this.radius) {
+            this.velX = -this.velX;
+          }
+
+          if (this.y < this.radius || this.y > height - this.radius) {
+            this.velY = -this.velY;
+          }
+
+          this.x += this.velX;
+          this.y += this.velY;
+        }
+      }
+
+      let balls = [];
+      let timer;
+
+      const createNewBall = () => {
+        if (balls.length < numberOfballs) {
+          balls.push(new Ball()) || clearInterval(timer);
+        }
+      };
+
+      createNewBall();
+
+      const loop = () => {
+        ctx.clearRect(0, 0, width, height);
+
+        balls.forEach(ball => {
+          ball.drawBall();
+          ball.changeDirectionIfNecessary();
+        });
+
+        requestAnimationFrame(loop);
+      };
+
+      loop();
+
+      timer = setInterval(createNewBall, 5000);
+    </script>
+  </body>
+</html>
